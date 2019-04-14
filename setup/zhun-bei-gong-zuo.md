@@ -6,9 +6,9 @@
 
 |hostname|IP     |备注    |
 |---|---|---|
-|k8s-master001|192.168.0.77| |
-|k8s-master002|192.168.0.75| |
-|k8s-master003|192.168.0.76| |
+|k8s-master001|192.168.0.77|Master+ETCD|
+|k8s-master002|192.168.0.75|Master+ETCD|
+|k8s-master003|192.168.0.76|Master+ETCD|
 |k8s-node001|192.168.0.74| |
 |k8s-node002|192.168.0.73| |
 |k8s-node003|192.168.0.72| |
@@ -135,5 +135,5 @@
 > 以上所有操作，可以设置为一个脚本文件，方便在每一台机器上进行设置。你可以使用以下命令初始化每一台机器：
 
 ```
-curl -fsSL ".../init.sh" | bash
+curl -fsSL "https://raw.githubusercontent.com/zsea/kubernetes-setup-v1.14/master/attachments/init.sh" | bash
 ```
