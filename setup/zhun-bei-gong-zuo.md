@@ -41,6 +41,29 @@
     PREFIX=24
     GATEWAY=192.168.0.253
     ```
+3. 重启网络配置
+
+    ```
+    service network restart
+    ```
+
+    重启后，用```ip addr```查看IP地址是否生效。
+
+    ```
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+        valid_lft forever preferred_lft forever
+    2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
+        link/ether 00:16:3e:02:84:bf brd ff:ff:ff:ff:ff:ff
+        inet 192.168.0.77/24 brd 192.168.0.255 scope global dynamic eth0
+        valid_lft 315146392sec preferred_lft 315146392sec
+        inet 192.168.31.250/24 brd 192.168.31.255 scope global eth0:0
+        valid_lft forever preferred_lft forever
+
+    ```
+
+    在```eth0```下，可以看到新增加的IP地址已经生效。
 
 ## 系统准备
 

@@ -109,25 +109,23 @@ kubeadm有很多参数可以对集群进行各种设置。我们将使用```kube
 
     初始化成功后，会有如下提示：
 
-    > You can now join any number of the control-plane node running the following command on each as root:
+    ```
+    You can now join any number of the control-plane node running the following command on each as root:
 
-    > kubeadm join 192.168.31.250:6443 --token lnjoc2.zcy1aqim08z7ihbu \\
+    kubeadm join 192.168.31.250:6443 --token lnjoc2.zcy1aqim08z7ihbu \
+        --discovery-token-ca-cert-hash sha256:957d2dc29f0a240d1a6af45bd0afd09a092030cb8c280c7737874bcc14b903fb \
+        --experimental-control-plane --certificate-key f30d8705ace48b6721584d02065f43cb5458fca0dc7f4f4ff7e359c0538d8c90
 
-    >    --discovery-token-ca-cert-hash sha256:957d2dc29f0a240d1a6af45bd0afd09a092030cb8c280c7737874bcc14b903fb \\
-        
-    >    --experimental-control-plane --certificate-key f30d8705ace48b6721584d02065f43cb5458fca0dc7f4f4ff7e359c0538d8c90
+    Please note that the certificate-key gives access to cluster sensitive data, keep it secret!
+    As a safeguard, uploaded-certs will be deleted in two hours; If necessary, you can use
+    "kubeadm init phase upload-certs --experimental-upload-certs" to reload certs afterward.
 
-    >Please note that the certificate-key gives access to cluster sensitive data, keep it secret!
+    Then you can join any number of worker nodes by running the following on each as root:
 
-    > As a safeguard, uploaded-certs will be deleted in two hours; If necessary, you can use
+    kubeadm join 192.168.31.250:6443 --token lnjoc2.zcy1aqim08z7ihbu \
+        --discovery-token-ca-cert-hash sha256:957d2dc29f0a240d1a6af45bd0afd09a092030cb8c280c7737874bcc14b903fb
 
-    > "kubeadm init phase upload-certs --experimental-upload-certs" to reload certs afterward.
-
-    > Then you can join any number of worker nodes by running the following on each as root:
-
-    > kubeadm join 192.168.31.250:6443 --token lnjoc2.zcy1aqim08z7ihbu \\
-
-    >   --discovery-token-ca-cert-hash sha256:957d2dc29f0a240d1a6af45bd0afd09a092030cb8c280c7737874bcc14b903fb
+    ```
 
 4. 其它Master节点加入
 
