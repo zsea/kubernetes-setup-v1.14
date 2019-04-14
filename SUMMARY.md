@@ -8,4 +8,9 @@
 * [ETCD集群安装](setup/etcd.md)
 * [Master安装](setup/master.md)
 * [Worker安装](setup/worker.md)
+* [重置环境](setup/reset.md)
 
+---
+* [calico](setup/calico.md)
+* [Ingress](setup/ingress.md)
+* [kubernetes-dashboard](setup/kubernetes-dashboard.md)
