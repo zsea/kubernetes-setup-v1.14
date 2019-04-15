@@ -141,6 +141,21 @@
         ```
         wget -O /etc/yum.repos.d/docker-ce.repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
         ```
+
+        由于国内访问dockerhub比较慢，可以选择性的添加docker加速度器。我使用的是阿里云提供的加速器。
+
+        ```
+        sudo mkdir -p /etc/docker
+        sudo tee /etc/docker/daemon.json <<-'EOF'
+        {
+            "registry-mirrors": ["https://8zy1vsz7.mirror.aliyuncs.com"]
+        }
+        EOF
+        sudo systemctl daemon-reload
+        sudo systemctl restart docker
+        ```
+        如果你用的是其它操作系统，也可参考阿里云官方文档进行设置。
+
 2. 软件安装
 
     ```
@@ -162,3 +177,5 @@
 ```
 curl -fsSL "https://raw.githubusercontent.com/zsea/kubernetes-setup-v1.14/master/attachments/init.sh" | bash
 ```
+
+## 

@@ -13,6 +13,7 @@
     * [Ingress](addon/ingress.md)
     * [kubernetes-dashboard](addon/kubernetes-dashboard.md)
 * [应用部署](application/readme.md)
+    * [快速部署](application/quick.md)
 * [常用功能](command/readme.md)
     * [命名空间](command/namespaces.md)
 
