@@ -10,6 +10,7 @@
 
 * [Kubernetes 指南](https://feisky.gitbooks.io/kubernetes/content/)
 * [官方文档](https://kubernetes.io/zh/docs/)
+* [Kubernetes中文指南/云原生应用架构实践手册](https://jimmysong.io/kubernetes-handbook/) - 宋净超
 
 本手记不包括以下内容：
 
