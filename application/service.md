@@ -7,7 +7,7 @@
 1. yaml编写
 
     ```yaml
-    kind: Service,
+    kind: Service
     apiVersion: v1
     metadata: 
       name: apibus
