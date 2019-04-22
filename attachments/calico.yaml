@@ -1,10 +1,3 @@
-# calico
-
-在集群安装一章中，我们集群中的所有节点状态均为```NotReady```，这是因为我们没有安装网络插件，而只有安装了网络插件，才能让所有的```Pod```加入到同一个局域网中，才能检测到节点状态，本文是安装```calico```网络插件的参考文档。
-
-将以下内容保存为文件```calico.yaml```，然后使用命令```kubectl apply -f ./calico.yaml```来进行安装。
-
-```yaml
 ---
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Calico installation.
@@ -754,10 +747,4 @@ metadata:
 ---
 # Source: calico/templates/configure-canal.yaml
 
-```
 
-如果你不需要对配置文件进行任何修改，可以使用以下命令进行安装。
-
-```
-curl -fsSL "https://raw.githubusercontent.com/zsea/kubernetes-setup-v1.14/master/attachments/calico.yaml" | kubectl apply -f 
-```
